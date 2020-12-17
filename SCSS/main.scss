@@ -1,0 +1,103 @@
+/* Primary styles */
+$primary-color: #272727;
+$accent-color: #ff652f;
+$text-color:#fff;
+$primary-font-family: Arial,
+Helvetica,
+sans-serif;
+
+$font-weights: ("regular": 400,
+    "medium": 500,
+    "bold": 700);
+
+/* Navigation Styles */
+$nav-color: #333;
+$nav-font-color: #f2f2f2;
+$nav-font-size: 17px;
+
+//Navigation Hover
+$nav-color-hover: #ddd;
+$nav-font-color-hover:#000;
+
+//Navigation Active
+$nav-color-active: #4CAF50;
+$nav-font-color-active : white;
+
+body {
+    margin: 0;
+    background: $primary-color;
+    color: $text-color;
+    font-weight: map-get($font-weights, bold);
+    font-family: $primary-font-family;
+}
+
+.main {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.nav {
+    background: $nav-color;
+    color: $nav-font-color;
+    font-weight: map-get($font-weights, bold);
+    overflow: hidden;
+
+    a {
+        float: left;
+        display: block;
+        color: $nav-font-color;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: $nav-font-size;
+    }
+
+    a:hover {
+        background-color: $nav-color-hover;
+        color: $nav-font-color-hover;
+    }
+
+    a.active {
+        background-color: $nav-color-active;
+        color: $nav-font-color-active;
+    }
+
+    .icon {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .nav {
+
+        a:not(:first-child) {
+            display: none;
+        }
+
+        a.icon {
+            float: right;
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .nav {
+
+        .responsive {
+            position: relative;
+        }
+
+        .responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+    }
+}
